@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func ReadInput(f string) (*[]int, *[]int) {
+func ReadInput(f string) ([]int, []int) {
 	var l1, l2 []int
 
 	file, err := os.Open(f)
@@ -42,5 +42,5 @@ func ReadInput(f string) (*[]int, *[]int) {
 		log.Fatal("list lengths do not match!")
 	}
 
-	return &l1, &l2
+	return l1, l2
 }
