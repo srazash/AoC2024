@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func ReadInput(f string) ([]int, []int) {
+func Day01Input(f string) ([]int, []int) {
 	var l1, l2 []int
 
 	file, err := os.Open(f)
@@ -43,4 +43,38 @@ func ReadInput(f string) ([]int, []int) {
 	}
 
 	return l1, l2
+}
+
+func Day02Input(f string) [][]int {
+	var l [][]int
+
+	file, err := os.Open(f)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+
+	for scanner.Scan() {
+		ln := strings.Split(scanner.Text(), " ")
+		var s []int
+
+		for _, v := range ln {
+			i, err := strconv.Atoi(v)
+			if err != nil {
+				log.Fatal(err)
+			}
+
+			s = append(s, i)
+		}
+
+		l = append(l, s)
+	}
+
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
+	}
+
+	return l
 }
