@@ -10,7 +10,7 @@ import (
 func Puzzle1() {
 	fmt.Println("Day 1 / Puzzle 1!")
 
-	l1, l2 := aocutil.ReadInput("input.txt")
+	l1, l2 := aocutil.ReadInput("day01/input.txt")
 
 	sort.Ints(l1)
 	sort.Ints(l2)

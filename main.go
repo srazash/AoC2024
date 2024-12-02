@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"aoc/day01"
+	"aoc/day02"
 )
 
 func main() {
@@ -11,4 +12,7 @@ func main() {
 
 	day01.Puzzle1()
 	day01.Puzzle2()
+
+	day02.Puzzle1()
+	day02.Puzzle2()
 }
